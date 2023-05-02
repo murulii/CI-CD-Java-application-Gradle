@@ -11,3 +11,10 @@ chmod 700 get_helm.sh
 curl https://get.datree.io | /bin/bash
 datree version
 datree test <your_kubernetes_manifest_YAML_NAME>
+
+
+###goto datree.io--integration--helm cahart
+
+helm plugin install https://github.com/datreeio/helm-datree
+helm plugin update datree
+helm datree test [CHART_DIRECTORY]
