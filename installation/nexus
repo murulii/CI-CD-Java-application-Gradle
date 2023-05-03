@@ -1,5 +1,6 @@
 Install Nexus as a service
 
+apt-get install openjdk-8-jdk
 apt-get install wget ( install if you dont have wget )
 java -version ( make sure java is installed which should be java 8 or higher version )
 wget https://download.sonatype.com/nexus/3/latest-unix.tar.gz
