@@ -1,0 +1,24 @@
+Install Nexus as a service
+
+apt-get install wget ( install if you dont have wget )
+java -version ( make sure java is installed which should be java 8 or higher version )
+wget https://download.sonatype.com/nexus/3/latest-unix.tar.gz
+tar -xvf latest-unix.tar.gz
+cd nexus-3.35.0-02/bin
+./nexus start ( starts the nexus artifactory )
+./nexus status ( by this you check the status of nexus artifactory )
+
+
+Install nexus using docker images
+
+sudo apt update
+sudo apt install -y curl gnupg2 software-properties-common apt-transport-https ca-certificates
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+sudo apt update
+sudo apt install -y containerd.io docker-ce docker-ce-cli
+
+
+docker run -d -p 8081:8081 --name nexus sonatype/nexus3
+
+
